@@ -1,6 +1,6 @@
 <?php
 
-namespace Akaunting\Language\Controllers;
+namespace LaravelRussian\Language\Controllers;
 
 use Auth;
 use Illuminate\Http\Request;
@@ -63,8 +63,8 @@ class Language extends Controller
 
         return redirect(
             $url
-            ? $url
-            : (config('language.url') ? url('/' . $locale) : url('/'))
+                ? $url
+                : (config('language.url') ? url('/' . $locale) : url('/'))
         );
     }
 

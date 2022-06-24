@@ -1,22 +1,22 @@
 # Language switcher package for Laravel
 
-![Downloads](https://img.shields.io/packagist/dt/akaunting/laravel-language)
+![Downloads](https://img.shields.io/packagist/dt/laravel-russian/laravel-language)
 [![StyleCI](https://github.styleci.io/repos/102290249/shield?style=flat&branch=master)](https://styleci.io/repos/102290249)
-[![Quality](https://img.shields.io/scrutinizer/quality/g/akaunting/laravel-language?label=quality)](https://scrutinizer-ci.com/g/akaunting/laravel-language)
-[![License](https://img.shields.io/github/license/akaunting/laravel-language)](LICENSE.md)
+[![Quality](https://img.shields.io/scrutinizer/quality/g/laravel-russian/laravel-language?label=quality)](https://scrutinizer-ci.com/g/laravel-russian/laravel-language)
+[![License](https://img.shields.io/github/license/laravel-russian/laravel-language)](LICENSE.md)
 
 This package allows switching locale easily on Laravel projects. It's so simple to use, once it's installed, your App locale will change only by passing routes into SetLanguage middleware.
 
 **Top features:**
 
-- Change automatically app locale depending on user browser configuration
-- Language flags built-in for easy implementation
-- Get language name like 'English' or 'Español' from codes such as 'en' or 'es'
-- Option to choose short (en) or long (en-GB) language code
-- Store locale on users table
-- Restrict users to set languages you don't have translations
-- Helper functions for clean, simple and easy to read API
-- Supports Carbon and Date packages
+-   Change automatically app locale depending on user browser configuration
+-   Language flags built-in for easy implementation
+-   Get language name like 'English' or 'Español' from codes such as 'en' or 'es'
+-   Option to choose short (en) or long (en-GB) language code
+-   Store locale on users table
+-   Restrict users to set languages you don't have translations
+-   Helper functions for clean, simple and easy to read API
+-   Supports Carbon and Date packages
 
 ## Getting Started
 
@@ -25,21 +25,21 @@ This package allows switching locale easily on Laravel projects. It's so simple 
 Run the following command:
 
 ```
-composer require akaunting/laravel-language
+composer require laravel-russian/laravel-language
 ```
 
 ### 2. Register (for Laravel < 5.5)
 
-Register the service provider in ``config/app.php``
+Register the service provider in `config/app.php`
 
 ```php
-Akaunting\Language\Provider::class,
+LaravelRussian\Language\Provider::class,
 ```
 
 Add alias if you want to use the facade.
 
 ```php
-'Language'   => Akaunting\Language\Facade::class,
+'Language'   => LaravelRussian\Language\Facade::class,
 ```
 
 ### 3. Publish
@@ -52,13 +52,11 @@ php artisan vendor:publish --tag=language
 
 ### 4. Migrate
 
-
 Add locale column to users table:
 
 ```
 php artisan migrate
 ```
-
 
 ### 5. Configure
 
@@ -66,18 +64,18 @@ Default values can be modified also on `config/language.php`
 
 #### Keys
 
-- route: Makes route available
-- carbon: Sets briannesbitt/carbon translator language
-- date: Sets jenssegers/date translator language
-- home: Make home route available
-- auto: Sets language automatically depending on user's browser config
-- prefix: Prefix of routes URI to set locale
-- middleware: default middleware to set locale
-- controller: default controller to handle locale
-- flags: Settings such as width, class etc for flags
-- mode: The language code and name mode
-- allowed: Allowed language codes
-- all: Available language names and codes
+-   route: Makes route available
+-   carbon: Sets briannesbitt/carbon translator language
+-   date: Sets jenssegers/date translator language
+-   home: Make home route available
+-   auto: Sets language automatically depending on user's browser config
+-   prefix: Prefix of routes URI to set locale
+-   middleware: default middleware to set locale
+-   controller: default controller to handle locale
+-   flags: Settings such as width, class etc for flags
+-   mode: The language code and name mode
+-   allowed: Allowed language codes
+-   all: Available language names and codes
 
 ## Usage
 
@@ -96,16 +94,16 @@ Route::group(['middleware' => 'language'], function () {
 
 ### URL
 
-- Via URL with return home: /languages/{locale}/home
-- Via URL with return back: /languages/{locale}/back
+-   Via URL with return home: /languages/{locale}/home
+-   Via URL with return back: /languages/{locale}/back
 
-**Tip:** */languages prefix can be changed from ```config/language.php```*
+**Tip:** _/languages prefix can be changed from `config/language.php`_
 
 ## Methods
 
 ### language()->allowed()
 
-Returns an array with ```[$code => $name]``` for all allowed
+Returns an array with `[$code => $name]` for all allowed
 languages of config. Example usage on blade:
 
 ```php
@@ -117,25 +115,24 @@ languages of config. Example usage on blade:
 ### language()->flags()
 
 Returns an output with flags for all allowed languages of config.
-Output can be changed from ```resources/views/vendor/language``` folder
+Output can be changed from `resources/views/vendor/language` folder
 
 ### language()->flag()
 
 Returns the flag of the current locale.
-Output can be changed from ```resources/views/vendor/language``` folder
+Output can be changed from `resources/views/vendor/language` folder
 
 ### language()->names($codes = null)
 
-Get an array like ```[$code => $name]``` from an array of only $codes.
-
+Get an array like `[$code => $name]` from an array of only $codes.
 
 ### language()->codes($langs = null)
 
-Get an array like ```[$name => $code]``` from an array of only $langs.
+Get an array like `[$name => $code]` from an array of only $langs.
 
 ### language()->back($code)
 
-Returns the URL to set up language and return back: ```back()```
+Returns the URL to set up language and return back: `back()`
 
 Also if you prefer to use directly route() function you can use it
 as following code:
@@ -146,7 +143,7 @@ as following code:
 
 ### language()->home($code)
 
-Returns the URL to set language and return to home: ```url('/')```
+Returns the URL to set language and return to home: `url('/')`
 
 Also if you prefer to use directly route() function you can use it
 as following code:
@@ -157,14 +154,14 @@ as following code:
 
 ### language()->getName($code = 'default')
 
-Returns the language name of ```$code``` if specified or the current
+Returns the language name of `$code` if specified or the current
 language set if not.
 
-**Tip:** *Use app()->getLocale() to get the current locale*
+**Tip:** _Use app()->getLocale() to get the current locale_
 
 ### language()->getCode($name = 'default')
 
-Returns the language code of ```$name``` if specified or the current
+Returns the language code of `$name` if specified or the current
 language set if not.
 
 ## Changelog
@@ -177,12 +174,12 @@ Pull requests are more than welcome. You must follow the PSR coding standards.
 
 ## Security
 
-If you discover any security related issues, please email security@akaunting.com instead of using the issue tracker.
+If you discover any security related issues, please email security@laravel-russian.com instead of using the issue tracker.
 
 ## Credits
 
-- [Denis Duliçi](https://github.com/denisdulici)
-- [All Contributors](../../contributors)
+-   [Denis Duliçi](https://github.com/denisdulici)
+-   [All Contributors](../../contributors)
 
 ## License
 

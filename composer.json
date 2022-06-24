@@ -1,5 +1,5 @@
 {
-    "name": "akaunting/laravel-language",
+    "name": "laravel-russian/laravel-language",
     "description": "Language switcher package for Laravel",
     "keywords": [
         "laravel",
@@ -9,20 +9,20 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Denis Duliçi",
-            "email": "info@akaunting.com",
-            "homepage": "https://akaunting.com",
+            "name": "mltefive",
+            "email": "mltefive@gmail.com",
+            "homepage": "https://laravel-russian.com",
             "role": "Developer"
         }
     ],
     "require": {
         "php": ">=5.6.4",
-        "laravel/framework": ">=5.4.0",
+        "laravel/framework": ">=9",
         "jenssegers/agent": "2.6.*"
     },
     "autoload": {
         "psr-4": {
-            "Akaunting\\Language\\": "./src"
+            "LaravelRussian\\Language\\": "./src"
         },
         "files": [
             "src/helpers.php"
@@ -31,10 +31,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Akaunting\\Language\\Provider"
+                "LaravelRussian\\Language\\Provider"
             ],
             "aliases": {
-                "Language": "Akaunting\\Language\\Facade"
+                "Language": "LaravelRussian\\Language\\Facade"
             }
         }
     }

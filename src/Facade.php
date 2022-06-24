@@ -1,6 +1,6 @@
 <?php
 
-namespace Akaunting\Language;
+namespace LaravelRussian\Language;
 
 use Illuminate\Support\Facades\Facade as BaseFacade;
 

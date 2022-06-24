@@ -1,6 +1,6 @@
 <?php
 
-namespace Akaunting\Language;
+namespace LaravelRussian\Language;
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
