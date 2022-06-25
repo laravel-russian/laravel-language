@@ -15,6 +15,7 @@ class SetLocale
     private function setLocale($locale)
     {
         // Check if is allowed and set default locale if not
+        // Проверьте, разрешено ли локаль по умолчанию, если нет
         if (!language()->allowed($locale)) {
             $locale = config('app.locale');
         }
@@ -28,7 +29,6 @@ class SetLocale
             if (config('language.mode.code') == 'long') {
                 $locale = explode('-', $locale)[0];
             }
-
             \Carbon\Carbon::setLocale($locale);
         }
 
@@ -86,6 +86,8 @@ class SetLocale
     {
         if ($request->has('lang')) {
             $this->setLocale($request->get('lang'));
+        } elseif ($request->session()->get('locale')) {
+            $this->setLocale($request->session()->get('locale'));
         } elseif (auth()->check()) {
             $this->setUserLocale();
         } else {

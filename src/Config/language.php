@@ -83,7 +83,7 @@ return [
     | This option indicates the prefix for language routes.
     |
     */
-    'prefix'        => 'languages',
+    'prefix'        => 'lang',
 
     /*
     |--------------------------------------------------------------------------
@@ -136,7 +136,7 @@ return [
     | This options indicates the language allowed languages.
     |
     */
-    'allowed'       => ['en', 'es', 'fr', 'de', 'it'],
+    'allowed'       => ['en', 'ru', 'cn'],
 
     /*
     |--------------------------------------------------------------------------
