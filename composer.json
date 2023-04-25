@@ -17,7 +17,7 @@
     ],
     "require": {
         "laravel/framework": "^8|^9|^10",
-        "jenssegers/agent": ">=2.6.*"
+        "jenssegers/agent": ">=2.6"
     },
     "autoload": {
         "psr-4": {
